@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160">
+  <!-- Queixal-carabassa de HealthySmile -->
+  <path d="M60 24 C40 12 14 24 18 58 C20 84 30 102 38 132 C42 148 52 148 55 128 C58 112 62 112 65 128 C68 148 78 148 82 132 C90 102 100 84 102 58 C106 24 80 12 60 24 Z"
+        fill="#fff6e6" stroke="#ff8a1f" stroke-width="6" stroke-linejoin="round" />
+  <rect x="55" y="2" width="10" height="20" rx="4" fill="#4cc23a" />
+  <path d="M65 10 C78 0 92 6 90 18 C80 16 72 16 65 14 Z" fill="#6dff5a" />
+  <polygon points="34,50 50,50 42,66" fill="#ff8a1f" />
+  <polygon points="70,50 86,50 78,66" fill="#ff8a1f" />
+  <polygon points="36,80 46,90 54,80 60,92 66,80 74,90 84,80 80,98 60,104 40,98" fill="#ff8a1f" />
+</svg>

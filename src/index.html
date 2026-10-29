@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HealthySmile · Boca Monstruosa</title>
+    <!-- fonts de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- estils de l'app -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- pantalla de càrrega -->
+    <section id="loading" class="screen">
+      <!-- carabassa dibuixada amb formes SVG -->
+      <svg class="loader" viewbox="0 0 120 110" aria-hidden="true">
+        <!-- tija -->
+        <rect x="55" y="4" width="10" height="20" rx="4" fill="#4cc23a" />
+        <!-- gallons del cos -->
+        <ellipse cx="38" cy="62" rx="30" ry="40" fill="#e8660c" />
+        <ellipse cx="82" cy="62" rx="30" ry="40" fill="#e8660c" />
+        <ellipse cx="60" cy="62" rx="26" ry="42" fill="#ff8a1f" />
+        <!-- ulls -->
+        <polygon points="38,50 52,50 45,64" fill="#fff3a6" />
+        <polygon points="68,50 82,50 75,64" fill="#fff3a6" />
+        <!-- boca -->
+        <polygon points="34,78 44,86 52,78 60,88 68,78 76,86 86,78 80,98 60,102 40,98" fill="#fff3a6" />
+      </svg>
+      <!-- el sketch.js canvia aquest text si hi ha un error de càrrega -->
+      <p id="loadingText">Convocant els fantasmes…</p>
+    </section>
+
+    <!-- pantalla d'inici -->
+    <section id="start" class="screen hidden">
+      <img class="logo" src="assets/logo.svg" alt="Logo HealthySmile" />
+      <h1>Boca Monstruosa</h1>
+      <!-- text d'ajuda per a l'usuari -->
+      <p class="lead">
+        Col·loca't davant la càmera i obre la boca ben gran. Com més temps l'aguantis oberta, més
+        monstres de Halloween sortiran! Aguanta 8 segons per netejar-te les dents.
+      </p>
+      <!-- desplegable de càmeres: s'amaga si només n'hi ha una -->
+      <label id="camRow" class="hidden">Càmera
+        <select id="camSelect"></select>
+      </label>
+      <button id="startBtn" type="button">Començar</button>
+      <!-- aquí surten els errors de la càmera -->
+      <p id="startError" class="error"></p>
+    </section>
+
+    <!-- experiència: el que es veu mentre es juga -->
+    <main id="stage" class="hidden">
+      <!-- vídeo de la càmera -->
+      <video id="cam" playsinline muted></video>
+      <!--  canvas amb el vídeo i les partícules -->
+      <div id="sketch"></div>
+      <!-- degradat fosc a les vores per donar ambient -->
+      <div id="vignette"></div>
+
+      <!-- barra superior amb el logo i el títol -->
+      <header id="topbar">
+        <img src="assets/logo.svg" alt="" />
+        <span>HealthySmile · Boca Monstruosa</span>
+      </header>
+
+      <!-- missatge que indica què ha de fer l'usuari -->
+      <p id="status">Busco la teva cara…</p>
+      <!-- barra de progrés -->
+      <div id="bar"><div id="fill"></div></div>
+
+      <!-- slider per ajustar quant s'ha d'obrir la boca perquè compti -->
+      <div id="controls">
+        <label for="thr">Obertura mínima <output id="thrOut">25%</output></label>
+        <input id="thr" type="range" min="10" max="60" value="25" />
+      </div>
+      <!-- fotogrames per segon -->
+      <div id="fps"></div>
+
+      <!-- pantalla final -->
+      <div id="win" class="hidden">
+        <h2>Boca neta!</h2>
+        <p>Els fantasmes han marxat. Torna-ho a provar quan vulguis!</p>
+      </div>
+    </main>
+
+    <!-- llibreria -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+    <!-- codi principal -->
+    <script type="module" src="sketch.js"></script>
+  </body>
+</html>
